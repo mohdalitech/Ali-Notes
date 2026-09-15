@@ -24,8 +24,8 @@ if(st.session_state.role_submitted):
     #             st.pdf(os.path.join("notes",file),key=file)
     #             st.divider()
     if(user_role=="Admin"):
-        admin_user_name=st.text_input("Enter admin's username : ")
-        admin_passkey=st.text_input("Enter admin's passkey : ")
+        admin_user_name=st.text_input("Enter admin's username : ",type="password")
+        admin_passkey=st.text_input("Enter admin's passkey : ",type="password")
         if(st.button("Submit",type="primary")):
             if(admin_user_name==st.secrets["ADMIN_USERNAME"] and admin_passkey==st.secrets["ADMIN_PASSKEY"]):
                 st.success("Credentials matched..!")
